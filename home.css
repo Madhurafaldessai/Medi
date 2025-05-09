@@ -63,7 +63,7 @@ body {
 }
 
 .appointment-card img {
-    width: 100%;
+    width: 5%;
     border-radius: 8px;
     margin-bottom: 10px;
     aspect-ratio: 16 / 9; /* Maintain image aspect ratio */
