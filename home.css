@@ -1,235 +1,106 @@
 body {
-    font-family: sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
 }
 
-.home-container {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+.doctors-list-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
 
-.home-header {
-    background-color: #304FFE; /* Vibrant blue header */
+.list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #304FFE;
     color: white;
-    padding: 20px;
-    border-radius: 15px 15px 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.location-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.1em;
-}
-
-.user-icon, .location-icon {
-    font-size: 1.5em;
-}
-
-.search-bar input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    font-size: 1em;
-}
-
-.appointment-options {
-    display: flex;
-    padding: 20px;
-    gap: 15px;
-    overflow-x: auto; /* For potential horizontal scrolling on smaller screens */
-}
-
-.appointment-card {
-    background-color: #e0f7fa;
+    padding: 15px 20px;
     border-radius: 10px;
-    padding: 15px;
-    display: flex; /* key change */
-    align-items: center; /* vertical center */
-    gap: 15px; /* space between image and text */
-    min-width: 250px; /* good for scrolling layout */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    flex-shrink: 0;
+    margin-bottom: 20px;
 }
 
-.appointment-card img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-
-
-}
-
-.appointment-card h3 {
-    margin-top: 0;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.appointment-card i {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 1.5em;
-    color: #304FFE;
-}
-
-.find-doctor {
-    padding: 20px;
-}
-
-.find-doctor h2 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.specialties-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 15px;
-    text-align: center;
-}
-
-.specialty-item {
-    background-color: #f9fbe7; /* Light yellow */
-    border-radius: 10px;
-    padding: 15px 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.specialty-item i {
-    font-size: 2em;
-    color: #388E3C; /* Green icons */
-    margin-bottom: 8px;
-}
-
-.specialty-item span {
-    display: block;
-    font-size: 0.9em;
-    color: #555;
-}
-
-.specialty-item.more-option {
-    background-color: #e3f2fd; /* Light blue */
-    color: #1976D2; /* Blue text */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-.featured-services {
-    padding: 20px;
-    background-color: #f0f4c3; /* Light olive */
-    border-radius: 10px;
-    margin: 15px;
-}
-
-.featured-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    color: #7CB342; /* Olive green */
-}
-
-.featured-header i {
+.back-button i {
+    color: white;
     font-size: 1.2em;
 }
 
-.featured-header h2 {
-    color: #7CB342;
-    margin: 0;
-}
-
-.affordable-procedures h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.procedure-icons {
+.doctors-list {
     display: flex;
-    gap: 15px;
-    overflow-x: auto;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.procedure-icon {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    flex: 0 0 auto; /* Don't grow, don't shrink, base width auto */
-}
-
-.procedure-icon img {
-    width: 60px;
-    height: auto;
-    display: block;
-}
-
-.procedure-icon.more-option {
-    background-color: #ede7f6; /* Light purple */
-    color: #673AB7; /* Deep purple */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.doctor-card {
+    background: #fff;
     display: flex;
-    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     align-items: center;
-    font-weight: bold;
-    font-size: 1.1em;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-    .home-header {
+.doctor-profile img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #304FFE;
+}
+
+.doctor-details {
+    flex: 1;
+}
+
+.doctor-name {
+    margin: 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.doctor-qualification,
+.doctor-specialty,
+.doctor-location {
+    margin: 5px 0;
+    color: #666;
+}
+
+.doctor-location i {
+    color: #304FFE;
+}
+
+.consultation-fee {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #444;
+}
+
+.view-profile-button {
+    margin-top: 10px;
+    background-color: #304FFE;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-profile-button:hover {
+    background-color: #1e40ff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .doctor-card {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .appointment-options {
-        padding: 15px;
-    }
-
-    .find-doctor {
-        padding: 15px;
-    }
-
-    .specialties-grid {
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-        gap: 10px;
-    }
-
-    .featured-services {
-        padding: 15px;
-        margin: 10px;
-    }
-
-    .procedure-icons {
-        gap: 10px;
-    }
-
-    .procedure-icon img {
-        width: 50px;
-    }
-
-    .procedure-icon.more-option {
-        width: 50px;
-        height: 50px;
-        font-size: 1em;
+    .doctor-profile img {
+        width: 80px;
+        height: 80px;
     }
 }
