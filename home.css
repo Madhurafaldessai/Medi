@@ -53,22 +53,23 @@ body {
 }
 
 .appointment-card {
-    background-color: #e0f7fa; /* Light teal */
+    background-color: #e0f7fa;
     border-radius: 10px;
     padding: 15px;
-    flex: 1 0 auto; /* Don't shrink, don't grow, base width auto */
-    text-align: left;
+    display: flex; /* key change */
+    align-items: center; /* vertical center */
+    gap: 15px; /* space between image and text */
+    min-width: 250px; /* good for scrolling layout */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    position: relative;
+    flex-shrink: 0;
 }
 
 .appointment-card img {
-    width: 100%; /* previously was 5% */
+    width: 60px;
+    height: 60px;
     border-radius: 8px;
-    margin-bottom: 10px;
-    aspect-ratio: 16 / 9;
     object-fit: cover;
-
+}
 
 }
 
